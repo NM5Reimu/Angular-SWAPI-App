@@ -1,0 +1,22 @@
+div {
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 700px;
+  font-size: 2rem;
+}
+
+footer {
+  flex: 0 0 auto;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 400px;
+  font-size: 2rem;
+}

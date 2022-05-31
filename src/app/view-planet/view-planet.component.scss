@@ -1,0 +1,61 @@
+.planet-viewer {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid;
+  padding: 15px;
+}
+
+.planet-info {
+  width: 10%;
+
+  h1 {
+    text-align: center;
+  }
+
+  button {
+    cursor: pointer;
+  }
+}
+.residents {
+  width: 90%;
+
+  h2 {
+    text-align: center;
+  }
+
+  .radio-buttons {
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-bottom: 15px;
+
+    input {
+      cursor: pointer;
+    }
+  }
+}
+
+.residents-grid {
+  display: grid;
+  width: 80%;
+  margin: 40px auto;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 230px));
+  grid-column-gap: 35px;
+  grid-row-gap: 35px;
+
+  &__item {
+    h3 {
+      text-align: center;
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px black solid;
+    padding: 10px;
+  }
+}

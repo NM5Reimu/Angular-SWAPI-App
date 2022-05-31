@@ -1,0 +1,24 @@
+.planets-grid {
+  display: grid;
+  width: 80%;
+  margin: 40px auto;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px black solid;
+    padding: 10px;
+
+    h1 {
+      text-align: center;
+    }
+
+    button {
+      cursor: pointer;
+    }
+  }
+}

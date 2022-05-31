@@ -1,0 +1,82 @@
+<div class="planet-viewer" *ngIf="currentPlanetsState.currentPlanet">
+  <div class="planet-info">
+    <h1>{{ currentPlanetsState.currentPlanet?.name }}</h1>
+
+    <div>
+      <h3>Info:</h3>
+      <p>Rotation period: {{ currentPlanetsState.currentPlanet?.rotation_period }}</p>
+      <p>Orbital period: {{ currentPlanetsState.currentPlanet?.orbital_period }}</p>
+      <p>Diameter: {{ currentPlanetsState.currentPlanet?.diameter }}</p>
+      <p>Climate: {{ currentPlanetsState.currentPlanet?.climate }}</p>
+      <p>Gravity: {{ currentPlanetsState.currentPlanet?.gravity }}</p>
+      <p>Terrain: {{ currentPlanetsState.currentPlanet?.terrain }}</p>
+      <p>Surface water: {{ currentPlanetsState.currentPlanet?.surface_water }}</p>
+      <p>Population: {{ currentPlanetsState.currentPlanet?.population }}</p>
+    </div>
+
+    <button (click)="backToPlanets()"> ← Back to planets</button>
+  </div>
+
+  <div class="residents">
+    <h2>Residents</h2>
+
+    <div class="radio-buttons">
+      <div class="radio-buttons__item">
+        <input
+          type="radio"
+          name="frequency"
+          checked="checked"
+          (click)="changeResidentsFilter('all')"
+        />
+        <label>All</label>
+      </div>
+
+      <div class="radio-buttons__item">
+        <input
+          type="radio"
+          name="frequency"
+          (click)="changeResidentsFilter('male')"
+        />
+        <label>Male</label>
+      </div>
+
+      <div class="radio-buttons__item">
+        <input
+          type="radio"
+          name="frequency"
+          (click)="changeResidentsFilter('female')"
+        />
+        <label>Female</label>
+      </div>
+
+      <div class="radio-buttons__item">
+        <input
+          type="radio"
+          name="frequency"
+          (click)="changeResidentsFilter('others')"
+        />
+        <label>Others</label>
+      </div>
+    </div>
+
+    <div class="residents-grid">
+      <div
+        class="residents-grid__item"
+        *ngFor="let resident of filterResidents(currentPlanetsState.currentPlanet.residents)"
+      >
+        <h3>{{ resident.name }}</h3>
+
+        <div>
+          <h4>Info:</h4>
+          <p>Gender: {{ resident.gender }}</p>
+          <p>Height: {{ resident.height }}</p>
+          <p>Mass: {{ resident.mass }}</p>
+          <p>Birth year: {{ resident.birth_year }}</p>
+          <p>Hair color: {{ resident.hair_color }}</p>
+          <p>Skin color: {{ resident.skin_color }}</p>
+          <p>Eye color: {{ resident.eye_color }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
